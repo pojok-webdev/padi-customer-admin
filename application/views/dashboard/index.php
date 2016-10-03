@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/dark-theme-admin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/dark-theme-admin/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/dark-theme-admin/css/local.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/padi/css/padi.css" />
 
     <script type="text/javascript" src="<?php echo base_url()?>plugins/dark-theme-admin/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>plugins/dark-theme-admin/bootstrap/js/bootstrap.min.js"></script>
@@ -25,6 +26,7 @@
 </head>
 
 <body>
+	<?php $this->load->view("dashboard/modals");?>
     <div id="wrapper">
           <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
             <div class="navbar-header">
@@ -39,15 +41,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul id="active" class="nav navbar-nav side-nav">
                     <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
-                    <li><a href="portfolio.html"><i class="fa fa-tasks"></i> Portfolio</a></li>
-                    <li><a href="blog.html"><i class="fa fa-globe"></i> Blog</a></li>
-                    <li><a href="signup.html"><i class="fa fa-list-ol"></i> SignUp</a></li>
-                    <li><a href="register.html"><i class="fa fa-font"></i> Register</a></li>
-                    <li><a href="timeline.html"><i class="fa fa-font"></i> Timeline</a></li>
-                    <li><a href="forms.html"><i class="fa fa-list-ol"></i> Forms</a></li>
-                    <li><a href="typography.html"><i class="fa fa-font"></i> Typography</a></li>
-                    <li><a href="bootstrap-elements.html"><i class="fa fa-list-ul"></i> Bootstrap Elements</a></li>
-                    <li><a href="bootstrap-grid.html"><i class="fa fa-table"></i> Bootstrap Grid</a></li>
+                    <li><a href="bootstrap-grid.html"><i class="fa fa-table"></i> Notulen</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">
@@ -72,7 +66,7 @@
                         </ul>
                     </li>
                     <li class="dropdown user-dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Steve Miller<b class="caret"></b></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Admin <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                             <li><a href="#"><i class="fa fa-user"></i> Profile</a></li>
                             <li><a href="#"><i class="fa fa-gear"></i> Settings</a></li>
@@ -94,7 +88,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1>Dashboard <small>Statistics and more</small></h1>
+                    <h1>PadiNET <small>Dashboard</small></h1>
                     <div class="alert alert-dismissable alert-warning">
                         <button data-dismiss="alert" class="close" type="button">&times;</button>
                         Selamat datang di Dashboard Admin! 
@@ -116,7 +110,7 @@
                 <div class="col-md-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-rss"></i> Feed</h3>
+                            <h3 class="panel-title"><i class="fa fa-rss"></i> Notulen</h3>
                         </div>
                         <div class="panel-body feed">
                             <section class="feed-item">
@@ -215,7 +209,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Daftar Pengguna </h3>
+                            <h3 class="panel-title"><i class="fa fa-user"></i> Daftar Pengguna <i id="userAdd" class="fa fa-plus-circle pointer"></i></h3>
                         </div>
                         <div class="panel-body">
                             <div id="shieldui-grid1x">
@@ -411,6 +405,9 @@
     <script type="text/javascript">
         jQuery(function ($) {
 			tuser = $("#tUser").DataTable();
+			$("#userAdd").click(function(){
+				$("#myModal").modal();
+			});
             var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
                 visits = [123, 323, 443, 32],
                 traffic = [
