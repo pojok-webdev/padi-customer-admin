@@ -1,25 +1,6 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<!--<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Dark Admin</title>
-
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/local.css" />
-
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- you need to include the shieldui css and js assets in order for the charts to work -->
-<!--    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
-    <link id="gridcss" rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/dark-bootstrap/all.min.css" />
-
-    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
-    <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
-</head>-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,15 +10,18 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/dark-theme-admin/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/dark-theme-admin/css/local.css" />
 
-    <script type="text/javascript" src="<?php echo base_url()?>plugins/dark-theme-admin/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>plugins/dark-theme-admin/js/jquery.js"></script>
     <script type="text/javascript" src="<?php echo base_url()?>plugins/dark-theme-admin/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- you need to include the shieldui css and js assets in order for the charts to work -->
-    <link rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
-    <link id="gridcss" rel="stylesheet" type="text/css" href="http://www.shieldui.com/shared/components/latest/css/dark-bootstrap/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/shieldui/light-bootstrap/all.min.css" />
+    <link id="gridcss" rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/shieldui/dark-bootstrap/all.min.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/datatables-1.10.12/css/dataTables.foundation.css" />
 
-    <script type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
-    <script type="text/javascript" src="http://www.prepbootstrap.com/Content/js/gridData.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>plugins/shieldui/shieldui-all.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>plugins/prepbootstrap/gridData.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>plugins/canvasjs/js/canvasjs.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url()?>plugins/datatables-1.10.12/js/jquery.dataTables.js"></script>
 </head>
 
 <body>
@@ -113,10 +97,8 @@
                     <h1>Dashboard <small>Statistics and more</small></h1>
                     <div class="alert alert-dismissable alert-warning">
                         <button data-dismiss="alert" class="close" type="button">&times;</button>
-                        Welcome to the admin dashboard! Feel free to review all pages and modify the layout to your needs. 
+                        Selamat datang di Dashboard Admin! 
                         <br />
-                        This theme uses the <a href="https://www.shieldui.com">ShieldUI</a> JavaScript library for the 
-                        additional data visualization and presentation functionality illustrated here.
                     </div>
                 </div>
             </div>
@@ -233,10 +215,30 @@
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Traffic Sources One month tracking </h3>
+                            <h3 class="panel-title"><i class="fa fa-bar-chart-o"></i> Daftar Pengguna </h3>
                         </div>
                         <div class="panel-body">
-                            <div id="shieldui-grid1"></div>
+                            <div id="shieldui-grid1x">
+								<table id="tUser">
+									<thead>
+										<tr><th>nama</th><th>divisi</th></tr>
+									</thead>
+									<tbody>
+										<tr><td>Jojon</td><td>TS</td></tr>
+										<tr><td>Sule</td><td>TS</td></tr>
+										<tr><td>Bagio</td><td>TS</td></tr>
+										<tr><td>Benyamin</td><td>Sales</td></tr>
+										<tr><td>Parto</td><td>Sales</td></tr>
+										<tr><td>Cahyono</td><td>TS</td></tr>
+										<tr><td>Cak Lontong</td><td>TS</td></tr>
+										<tr><td>Bokir</td><td>TS</td></tr>
+										<tr><td>Roy Markun</td><td>TS</td></tr>
+										<tr><td>Tarzan</td><td>TS</td></tr>
+										<tr><td>Susi</td><td>Sales</td></tr>
+										<tr><td>Esther</td><td>Sales</td></tr>
+									</tbody>
+								</table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -309,131 +311,40 @@
                         <div class="tab-pane clearfix active" id="stats">
                             <h5 class="tab-header"><i class="fa fa-calendar-o fa-2x"></i> Last logged-in users</h5>
                             <ul class="news-list">
+								<?php foreach($lastactivity as $user){?>
                                 <li>
                                     <i class="fa fa-user fa-4x pull-left"></i>
                                     <div class="news-item-info">
-                                        <div class="name"><a href="#">Ivan Gorge</a></div>
-                                        <div class="position">Software Engineer</div>
-                                        <div class="time">Last logged-in: Mar 12, 11:11</div>
+                                        <div class="name"><a href="#"><?php echo $user->username;?></a></div>
+                                        <div class="position"><?php echo $user->grp;?></div>
+                                        <div class="time">Last logged-in: <?php echo $user->createdate;?></div>
                                     </div>
                                 </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Roman Novak</a></div>
-                                        <div class="position">Product Designer</div>
-                                        <div class="time">Last logged-in: Mar 12, 19:02</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Teras Uotul</a></div>
-                                        <div class="position">Chief Officer</div>
-                                        <div class="time">Last logged-in: Jun 16, 2:34</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Deral Ferad</a></div>
-                                        <div class="position">Financial Assistant</div>
-                                        <div class="time">Last logged-in: Jun 18, 4:20</div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Konrad Polerd</a></div>
-                                        <div class="position">Sales Manager</div>
-                                        <div class="time">Last logged-in: Jun 18, 5:13</div>
-                                    </div>
-                                </li>
+                                <?php }?>
+
                             </ul>
                         </div>
                         <div class="tab-pane" id="report">
                             <h5 class="tab-header"><i class="fa fa-star fa-2x"></i> Popular contacts</h5>
                             <ul class="news-list news-list-no-hover">
+								<?php foreach($amount as $user){?>
                                 <li>
                                     <i class="fa fa-user fa-4x pull-left"></i>
                                     <div class="news-item-info">
-                                        <div class="name"><a href="#">Pol Johnsson</a></div>
+                                        <div class="name"><a href="#"><?php echo $user->user . " (" . $user->cnt . ")";?></a></div>
                                         <div class="options">
                                             <button class="btn btn-xs btn-success">
                                                 <i class="fa fa-phone"></i>
                                                 Call
                                             </button>
-                                            <button class="btn btn-xs btn-warning">
+                                            <button class="btn btn-xs btn-warning directmail">
                                                 <i class="fa fa-envelope-o"></i>
                                                 Message
                                             </button>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Terry Garel</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Eruos Forkal</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Remus Reier</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <i class="fa fa-user fa-4x pull-left"></i>
-                                    <div class="news-item-info">
-                                        <div class="name"><a href="#">Lover Lund</a></div>
-                                        <div class="options">
-                                            <button class="btn btn-xs btn-success">
-                                                <i class="fa fa-phone"></i>
-                                                Call
-                                            </button>
-                                            <button class="btn btn-xs btn-warning">
-                                                <i class="fa fa-envelope-o"></i>
-                                                Message
-                                            </button>
-                                        </div>
-                                    </div>
-                                </li>
+                                <?php }?>
                             </ul>
                         </div>
                         <div class="tab-pane" id="dropdown1">
@@ -499,6 +410,7 @@
 
     <script type="text/javascript">
         jQuery(function ($) {
+			tuser = $("#tUser").DataTable();
             var performance = [12, 43, 34, 22, 12, 33, 4, 17, 22, 34, 54, 67],
                 visits = [123, 323, 443, 32],
                 traffic = [
@@ -567,7 +479,16 @@
                 { field: "Percent", title: "Percent", format: "{0} %" },
                 { field: "Target", title: "Target" },
                 ]
-            });            
+            });         
+            $(".directmail").click(function(){
+				window.location.href = "";
+			});   
+			var myLineChart = new Chart(ctx, {
+				type: 'line',
+				data: data,
+				options: options
+			});
+			
         });        
     </script>
 </body>
