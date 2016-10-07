@@ -42,6 +42,7 @@
                 <ul id="active" class="nav navbar-nav side-nav">
                     <li class="selected"><a href="index.html"><i class="fa fa-bullseye"></i> Dashboard</a></li>
                     <li><a href="bootstrap-grid.html"><i class="fa fa-table"></i> Notulen</a></li>
+                    <li><a href="<?php echo base_url();?>users"><i class="fa fa-users"></i> Users</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right navbar-user">
                     <li class="dropdown messages-dropdown">

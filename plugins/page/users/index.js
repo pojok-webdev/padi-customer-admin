@@ -1,0 +1,3 @@
+(function($){
+    $("#tUsers").DataTable();    
+}(jQuery))
