@@ -32,7 +32,11 @@
 	<script>
 		$(document).ready(function(){
 			$("#tUsers").DataTable();
+            $("#tUsers").on("click",".btnedit",function(){
+                console.log("Edit");
+            });
 		});
+        
 	</script>    
 </head>
 <body>
@@ -107,33 +111,23 @@
                                     <tr>
                                         <th class="text-center">ID</th>
                                         <th class="text-center">Nama</th>
+                                        <th class="text-center">Email</th>
                                         <th class="text-center">Role</th>
                                         <th class="text-center">Cabang</th>
                                         <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach($users as $user){?>
                                     <tr>
-                                        <td>1</td>
-                                        <td class="text-left">Puji W Prayitno</td>
-                                        <td class="text-left">App Admin</td>
-                                        <td class="text-left">Surabaya, Jakarta, Malang, Bali</td>
-                                        <td><button class="btn btn-primary">Edit</button></td>
+                                        <td><?php echo $user->id;?></td>
+                                        <td class="text-left"><?php echo $user->username;?></td>
+                                        <td class="text-left"><?php echo $user->email;?></td>
+                                        <td class="text-left"><?php echo $user->roles;?></td>
+                                        <td class="text-left"><?php echo $user->branches;?></td>
+                                        <td><button class="btn btn-primary btnedit">Edit</button></td>
                                     </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td class="text-left">Dwi Wutono</td>
-                                        <td class="text-left">App Admin</td>
-                                        <td class="text-left">Surabaya</td>
-                                        <td><button class="btn btn-primary">Edit</button></td>
-                                    </tr>
-                                    <tr>
-                                        <td>3</td>
-                                        <td class="text-left">Amir Khan</td>
-                                        <td class="text-left">App Admin</td>
-                                        <td class="text-left">Surabaya</td>
-                                        <td><button class="btn btn-primary">Edit</button></td>
-                                    </tr>
+                                    <?php }?>
                                 </tbody>
                             </table>
                         </div>
