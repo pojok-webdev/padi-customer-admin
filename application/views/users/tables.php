@@ -575,7 +575,7 @@
 					<li class="active open">
 						<a href="#" class="dropdown-toggle">
 							<i class="menu-icon fa fa-list"></i>
-							<span class="menu-text"> Tables </span>
+							<span class="menu-text"> Master </span>
 
 							<b class="arrow fa fa-angle-down"></b>
 						</a>
@@ -586,7 +586,7 @@
 							<li class="active">
 								<a href="tables.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									Simple &amp; Dynamic
+									User
 								</a>
 
 								<b class="arrow"></b>
@@ -595,7 +595,7 @@
 							<li class="">
 								<a href="jqgrid.html">
 									<i class="menu-icon fa fa-caret-right"></i>
-									jqGrid plugin
+									Pelanggan
 								</a>
 
 								<b class="arrow"></b>
