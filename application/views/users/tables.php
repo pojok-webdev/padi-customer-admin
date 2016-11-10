@@ -978,8 +978,8 @@
 															</label>
 														</td>
 
-														<td>
-															<a href="#"><?php echo $user->username;?></a>
+														<td class="username">
+															<?php echo $user->username;?>
 														</td>
 														<td><?php echo $user->roles;?></td>
 														<td class="hidden-480"><?php echo $user->branches;?></td>

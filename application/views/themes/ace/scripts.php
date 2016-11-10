@@ -27,7 +27,8 @@
 		<!-- ace scripts -->
 		<script src="/assets/ace-master/js/ace-elements.min.js"></script>
 		<script src="/assets/ace-master/js/ace.min.js"></script>
-
+        <!-- radu -->
+        <script src="/js/radu.js"></script>
 		<!-- inline scripts related to this page -->
 		<script type="text/javascript">
 			jQuery(function($) {
@@ -260,6 +261,7 @@
 				).css('padding-top', '12px');
 				*/
 			$("#dynamic-table").on("click",".btnsetpassword",function(){
+                $("#lusername").html( $(this).stairUp({level:4}).find(".username").html() );
                 $("#passwordModal").modal();
             })
 			
