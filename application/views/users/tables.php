@@ -3,7 +3,7 @@
 	<head>
 		<?php $this->load->view("themes/ace/head");?>
 	</head>
-
+	<?php $this->load->view("users/modals");?>
 	<body class="no-skin">
 		<div id="navbar" class="navbar navbar-default          ace-save-state">
 			<div class="navbar-container ace-save-state" id="navbar-container">
@@ -992,7 +992,7 @@
 														<td class="text-center">
 															<div class="hidden-sm hidden-xs action-buttons">
 																<a class="blue" href="#">
-																	<i class="ace-icon fa fa-search-plus bigger-130"></i>
+																	<i class="ace-icon fa fa-lock bigger-130 btnsetpassword"></i>
 																</a>
 
 																<a class="green" href="#">

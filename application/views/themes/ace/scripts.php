@@ -259,7 +259,9 @@
 				  }
 				).css('padding-top', '12px');
 				*/
-			
+			$("#dynamic-table").on("click",".btnsetpassword",function(){
+                $("#passwordModal").modal();
+            })
 			
 			})
 		</script>
