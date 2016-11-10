@@ -983,10 +983,10 @@
 														</td>
 														<td><?php echo $user->roles;?></td>
 														<td class="hidden-480"><?php echo $user->branches;?></td>
-														<td>Feb 12</td>
+														<td><?php echo $user->email;?></td>
 
 														<td class="hidden-480 text-center">
-															<span class="label label-sm label-warning">Expiring</span>
+															<span class="label label-sm label-warning"><?php echo $user->status;?></span>
 														</td>
 
 														<td class="text-center">
