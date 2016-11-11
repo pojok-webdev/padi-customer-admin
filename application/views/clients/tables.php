@@ -955,7 +955,7 @@
 															</label>
 														</th>
 														<th class="center" width="20%">Nama</th>
-														<th class="center" width="25%">Role</th>
+														<th class="center" width="20%">Role</th>
 														<th class="hidden-480 center" width="20%">Branch</th>
 
 														<th class="center" width="10%">
@@ -964,7 +964,7 @@
 														</th>
 														<th class="hidden-480 center" width="10%">Status</th>
 
-														<th class="center" width="10%"></th>
+														<th class="center" width="15%"></th>
 													</tr>
 												</thead>
 
@@ -973,7 +973,8 @@
 													<tr>
 														<td class="center">
 															<label class="pos-rel">
-																<?php echo $user->id;?>
+																<input type="checkbox" class="ace" />
+																<span class="lbl"></span>
 															</label>
 														</td>
 
@@ -991,15 +992,15 @@
 														<td class="text-center">
 															<div class="hidden-sm hidden-xs action-buttons">
 																<a class="blue" href="#">
-																	<i class="ace-icon fa fa-lock bigger-110 btnsetpassword"></i>
+																	<i class="ace-icon fa fa-lock bigger-130 btnsetpassword"></i>
 																</a>
 
 																<a class="green" href="#">
-																	<i class="ace-icon fa fa-pencil bigger-110"></i>
+																	<i class="ace-icon fa fa-pencil bigger-130"></i>
 																</a>
 
 																<a class="red" href="#">
-																	<i class="ace-icon fa fa-trash-o bigger-110"></i>
+																	<i class="ace-icon fa fa-trash-o bigger-130"></i>
 																</a>
 																<a class="red" href="#">
 																	<i class="ace-icon fa fa-envelope-o bigger-110"></i>
