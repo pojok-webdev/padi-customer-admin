@@ -28,16 +28,16 @@
       </div>
       <div class="modal-body">
     <div class="form-group">
-        <label for="pwd1">Name:</label>
+        <label for="pwd1">Password:</label>
         <input type="password" class="form-control" id="pwd1">
     </div>
     <div class="form-group">
-        <label for="pwd2">Password:</label>
+        <label for="pwd2">Ulangi Password:</label>
         <input type="password" class="form-control" id="pwd2">
     </div>
     </div>
       <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Simpan</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="btnChangePassword">Simpan</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>

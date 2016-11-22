@@ -260,10 +260,31 @@
 				  }
 				).css('padding-top', '12px');
 				*/
-			$("#dynamic-table").on("click",".btnsetpassword",function(){
-                $("#lusername").html( $(this).stairUp({level:4}).find(".username").html() );
-                $("#passwordModal").modal();
-            })
-			
+				$("#dynamic-table tbody").on("click","tr",function(){
+					$("#dynamic-table tbody tr").removeClass("selected");
+					$(this).addClass("selected");
+				});
+				$("#dynamic-table").on("click",".btnsetpassword",function(){
+					$("#lusername").html( $(this).stairUp({level:4}).find(".username").html() );
+					$("#passwordModal").modal();
+				})
+				$("#btnChangePassword").click(function(){
+					if($("#pwd1").val()===$("#pwd2").val()){
+						console.log("password is the same");
+						$.ajax({
+							url:"/users/updatepassword",
+							type:"post",
+							data:{password:$("#pwd1").val(),id:$("#dynamic-table tbody tr.selected").find(".myid").html()}
+						})
+						.done(function(res){
+							console.log("Res",res);
+						})
+						.fail(function(err){
+							console.log("Err",err);
+						});
+					}else{
+						console.log("password is not the same");
+					}
+				});
 			})
 		</script>

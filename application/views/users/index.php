@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Dark Admin</title>
+    <title>Dashboard - PadiApp</title>
 
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/dark-theme-admin/bootstrap/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="<?php echo base_url()?>plugins/dark-theme-admin/font-awesome/css/font-awesome.min.css" />

@@ -972,7 +972,7 @@
 													<?php foreach($users as $user){?>
 													<tr>
 														<td class="center">
-															<label class="pos-rel">
+															<label class="pos-rel myid">
 																<?php echo $user->id;?>
 															</label>
 														</td>

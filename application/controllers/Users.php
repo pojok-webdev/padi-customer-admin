@@ -6,5 +6,10 @@ class Users extends CI_Controller{
         $data['users'] = $users;
         $this->load->view('users/tables',$data);
     }
+    function updatepassword(){
+        $params = $this->input->post();
+//        echo $params["id"] . " and " . $params["password"];
+        change_password($params["id"],$params["password"]);
+    }
 }
 ?>
