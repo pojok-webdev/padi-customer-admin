@@ -281,7 +281,7 @@
                         <img class="nav-user-photo" src="/assets/ace-master/images/avatars/avatar2.png" alt="Admin" />
                         <span class="user-info">
                             <small>Welcome,</small>
-                            Jason
+                            PadiNET
                         </span>
 
                         <i class="ace-icon fa fa-caret-down"></i>
